@@ -20,7 +20,7 @@ public class ProductoServicioImpl implements ProductoServicio{
     }
 
     @Override
-    public Productos Buscar(Long id) {
+    public Productos Buscar(long id) {
         for(Productos busqueda: Lista){
             if(busqueda.getId()==id)
                 return busqueda;
@@ -51,7 +51,7 @@ public class ProductoServicioImpl implements ProductoServicio{
     }
 
     @Override
-    public void Borrar(Long id) {
+    public void Borrar(long id) {
         for(Productos borrar: Lista){
             if(borrar.getId()==id){
                 Lista.remove(borrar);

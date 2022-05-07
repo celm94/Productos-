@@ -38,7 +38,7 @@ public class Controller {
     }
 
     @GetMapping("/{borrar}/{id}")
-    public void Borrar(@PathVariable Long id){
+    public void Borrar(@PathVariable long id){
         productoServicio.Borrar(id);
     }
 
