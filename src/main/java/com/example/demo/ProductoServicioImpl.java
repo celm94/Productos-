@@ -11,6 +11,7 @@ public class ProductoServicioImpl implements ProductoServicio{
     public static AtomicLong sequence =new AtomicLong();
     private static List<Productos> Lista =new ArrayList<Productos>(){{
         add(new Productos(sequence.incrementAndGet(),"audifonos,","sony","bluetooth","100"));
+        add(new Productos(sequence.incrementAndGet(),"audifonos","apple", "inalambricos","500"));
     }};
 
     @Override
@@ -19,7 +20,7 @@ public class ProductoServicioImpl implements ProductoServicio{
     }
 
     @Override
-    public Productos Buscar(long id) {
+    public Productos Buscar(Long id) {
         for(Productos busqueda: Lista){
             if(busqueda.getId()==id)
                 return busqueda;
@@ -50,7 +51,7 @@ public class ProductoServicioImpl implements ProductoServicio{
     }
 
     @Override
-    public void Borrar(long id) {
+    public void Borrar(Long id) {
         for(Productos borrar: Lista){
             if(borrar.getId()==id){
                 Lista.remove(borrar);

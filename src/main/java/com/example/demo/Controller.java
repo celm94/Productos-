@@ -20,25 +20,25 @@ public class Controller {
     }
 
     @GetMapping("/{id}")
-    public Productos Buscar(@PathVariable long id){
+    public Productos Buscar(@PathVariable Long id){
         Productos busqueda = productoServicio.Buscar(id);
 
         return busqueda;
     }
 
-    @PostMapping("{crear}")
+    @PostMapping("/{crear}")
     public void Crear(@RequestBody Productos productos){
         productoServicio.Crear(productos);
     }
 
-    @GetMapping("{actualizar}")
+    @GetMapping("/{actualizar}")
     public Productos Actualizar(@RequestBody Productos productos){
         Productos actualizar = productoServicio.Actualizar(productos);
         return actualizar;
     }
 
-    @GetMapping("{borrar}/{id}")
-    public void Borrar(@PathVariable long id){
+    @GetMapping("/{borrar}/{id}")
+    public void Borrar(@PathVariable Long id){
         productoServicio.Borrar(id);
     }
 
