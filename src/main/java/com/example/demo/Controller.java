@@ -20,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping("/{id}")
-    public Productos Buscar(@PathVariable int id){
+    public Productos Buscar(@PathVariable long id){
         Productos busqueda = productoServicio.Buscar(id);
 
         return busqueda;
@@ -38,14 +38,9 @@ public class Controller {
     }
 
     @GetMapping("{borrar}/{id}")
-    public void Borrar(@PathVariable int id){
+    public void Borrar(@PathVariable long id){
         productoServicio.Borrar(id);
     }
-
-
-
-
-
 
 
 }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface ProductoServicio {
     public List<Productos> Listar();
-    public Productos Buscar(int id);
+    public Productos Buscar(long id);
     public void Crear(Productos nuevoproducto);
     public Productos Actualizar(Productos actualizarproducto);
-    public void Borrar(int id);
+    public void Borrar(long id);
 }

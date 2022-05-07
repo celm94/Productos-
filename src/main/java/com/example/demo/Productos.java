@@ -1,13 +1,13 @@
 package com.example.demo;
 
 public class Productos {
-    private int id;
+    private long id;
     public String nombre;
     private String marca;
     private String descripcion;
     private String precio;
 
-    public Productos(int id, String nombre, String marca, String descripcion, String precio){
+    public Productos(long id, String nombre, String marca, String descripcion, String precio){
         super();
         this.id = id;
         this.nombre = nombre;
@@ -16,11 +16,11 @@ public class Productos {
         this.precio = precio;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
