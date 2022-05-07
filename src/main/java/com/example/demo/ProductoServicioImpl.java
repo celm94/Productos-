@@ -4,10 +4,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class ProductoServicioImpl implements ProductoServicio{
-    private static List<Productos> Lista =new ArrayList<Productos>();
+    public static AtomicLong sequence =new AtomicLong();
+    private static List<Productos> Lista =new ArrayList<Productos>(){{
+        add(new Productos(sequence.incrementAndGet(),"audifonos,","sony","bluetooth","100"));
+    }};
 
     @Override
     public List<Productos> Listar() {
@@ -25,8 +29,7 @@ public class ProductoServicioImpl implements ProductoServicio{
 
     @Override
     public void Crear(Productos nuevoproducto) {
-        int cont=0;
-        nuevoproducto.setId(cont++);
+        nuevoproducto.setId(sequence.incrementAndGet());
         Lista.add(nuevoproducto);
 
     }
